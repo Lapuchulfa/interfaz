@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject panelCarga;      // Panel de carga falsa (opcional)
 
     [Header("Configuración")]
-    [SerializeField] private string nombreEscenaJuego = "GameScene";
+    [SerializeField] private string nombreEscenaJuego = "Carga";
 
     private void Start()
     {
@@ -67,5 +67,17 @@ public class MenuController : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;  // Para probarlo desde el Editor
 #endif
+    }
+
+    // --------- Boton Cerrar Opciones --------
+    public void CerrarOpciones()
+    {
+        if (panelOpciones != null)
+        {
+            panelOpciones.SetActive(false);
+            Debug.Log("Panel de opciones cerrado");
+        }
+
+
     }
 }
